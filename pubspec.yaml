@@ -1,6 +1,6 @@
 name: limit
 description: "Persistent across sessions, no manual storage needed. Easily manage cooldowns and rate limits with one-line."
-version: 1.0.0
+version: 1.0.5
 homepage:
 
 environment:
