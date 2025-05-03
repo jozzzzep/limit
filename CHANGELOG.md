@@ -1,3 +1,8 @@
+## 1.0.6
+
+- Added proper documentation to the library barrel file.
+- Added example file for pub.dev
+
 ## 1.0.5
 
 - Improved README navigation by adding **Back to Table of Contents** links.
