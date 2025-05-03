@@ -1,12 +1,20 @@
 ![img](https://i.imgur.com/3rNrEjC.png)
 
+<h3 align="center"><i>Persistent limits. Effortlessly automated.</i></h3>
+<p align="center">
+        <img src="https://img.shields.io/codefactor/grade/github/jozzzzep/limit?style=flat-square">
+        <img src="https://img.shields.io/github/license/jozzzzep/limit?style=flat-square">
+        <img src="https://img.shields.io/pub/points/limit?style=flat-square">
+        <img src="https://img.shields.io/pub/v/limit?style=flat-square">
+        
+</p>
 <p align="center">
   <a href="https://buymeacoffee.com/yourname" target="_blank">
     <img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-Support☕-blue?logo=buymeacoffee&style=flat-square" />
   </a>
 </p>
 
-No boilerplate. One line. No setup. The **limit** package gives you instant, persistent control over cooldowns and rate limits — across sessions, isolates, and app restarts. Define once, automate forever.
+One line. No boilerplate. No setup. The **limit** package gives you instant, persistent control over cooldowns and rate limits — across sessions, isolates, and app restarts. Define once, automate forever.
 
 #### Table of Contents
 
