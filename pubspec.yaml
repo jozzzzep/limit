@@ -1,7 +1,15 @@
 name: limit
 description: "Persistent across sessions, no manual storage needed. Easily manage cooldowns and rate limits with one-line."
 version: 1.0.5
-homepage:
+homepage: https://github.com/jozzzzep/limit
+repository: https://github.com/jozzzzep/limit
+issue_tracker: https://github.com/jozzzzep/limit/issues
+topics:
+  - rate-limiter
+  - cooldown
+  - rate-limit
+  - persistence
+  - easy-to-use
 
 environment:
   sdk: ^3.5.0
