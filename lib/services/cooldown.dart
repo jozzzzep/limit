@@ -33,11 +33,11 @@ class Cooldown extends BaseServiceObject {
   /// - The [prefix] is used to create unique keys for storing cooldown data.
   /// - The [duration] specifies how long the cooldown should last.
   Cooldown(String prefix, {required this.duration, super.useCache})
-    : _lastActivatedWithCache = Prf<DateTime>('prf_${prefix}_cd_date_time'),
-      _activationCountWithCache = Prf<int>(
-        'prf_${prefix}_cd_count',
-        defaultValue: 0,
-      );
+      : _lastActivatedWithCache = Prf<DateTime>('prf_${prefix}_cd_date_time'),
+        _activationCountWithCache = Prf<int>(
+          'prf_${prefix}_cd_count',
+          defaultValue: 0,
+        );
 
   /// Returns true if the cooldown is still active.
   ///
@@ -74,12 +74,12 @@ class Cooldown extends BaseServiceObject {
   ///
   /// This is a convenience method that combines checking and activating in one call.
   Future<bool> tryActivate() => _lock.synchronized(() async {
-    if (await isExpired()) {
-      await _activateCooldownUnlocked();
-      return true;
-    }
-    return false;
-  });
+        if (await isExpired()) {
+          await _activateCooldownUnlocked();
+          return true;
+        }
+        return false;
+      });
 
   /// Resets the cooldown by clearing the activation timestamp.
   ///
