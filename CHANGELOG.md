@@ -1,3 +1,8 @@
+## 1.0.7
+
+- Fixed fomatting issues
+- Fixed `README` links
+
 ## 1.0.6
 
 - Added proper documentation to the library barrel file.
