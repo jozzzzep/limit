@@ -40,14 +40,14 @@ class RateLimiter extends BaseServiceObject {
     required this.maxTokens,
     required this.refillDuration,
     super.useCache,
-  }) : _tokenCountWithCache = Prf<double>(
-         'prf_${prefix}_rate_tokens',
-         defaultValue: maxTokens.toDouble(),
-       ),
-       _lastRefillWithCache = Prf<DateTime>(
-         'prf_${prefix}_rate_last_refill',
-         defaultValue: DateTime.now(),
-       );
+  })  : _tokenCountWithCache = Prf<double>(
+          'prf_${prefix}_rate_tokens',
+          defaultValue: maxTokens.toDouble(),
+        ),
+        _lastRefillWithCache = Prf<DateTime>(
+          'prf_${prefix}_rate_last_refill',
+          defaultValue: DateTime.now(),
+        );
 
   /// Returns `true` if the limiter is currently rate-limited (no token available).
   ///
@@ -71,26 +71,26 @@ class RateLimiter extends BaseServiceObject {
   /// This method automatically handles token refill based on elapsed time since the last check.
   /// Attempts to consume 1 token atomically.
   Future<bool> tryConsume() => _lock.synchronized(() async {
-    final now = DateTime.now();
+        final now = DateTime.now();
 
-    final tokens = await _tokenCount.getOrFallback(maxTokens.toDouble());
-    final last = await _lastRefill.getOrFallback(now);
+        final tokens = await _tokenCount.getOrFallback(maxTokens.toDouble());
+        final last = await _lastRefill.getOrFallback(now);
 
-    final elapsedMs = now.difference(last).inMilliseconds;
-    final refillRatePerMs = maxTokens / refillDuration.inMilliseconds;
-    final refilledTokens = tokens + (elapsedMs * refillRatePerMs);
-    final newTokenCount = min(maxTokens.toDouble(), refilledTokens);
+        final elapsedMs = now.difference(last).inMilliseconds;
+        final refillRatePerMs = maxTokens / refillDuration.inMilliseconds;
+        final refilledTokens = tokens + (elapsedMs * refillRatePerMs);
+        final newTokenCount = min(maxTokens.toDouble(), refilledTokens);
 
-    if (newTokenCount >= 1) {
-      await _tokenCount.set(newTokenCount - 1);
-      await _lastRefill.set(now);
-      return true;
-    } else {
-      await _tokenCount.set(newTokenCount);
-      await _lastRefill.set(now);
-      return false;
-    }
-  });
+        if (newTokenCount >= 1) {
+          await _tokenCount.set(newTokenCount - 1);
+          await _lastRefill.set(now);
+          return true;
+        } else {
+          await _tokenCount.set(newTokenCount);
+          await _lastRefill.set(now);
+          return false;
+        }
+      });
 
   /// Executes the provided action if a token is available, otherwise returns null.
   ///
@@ -149,18 +149,18 @@ class RateLimiter extends BaseServiceObject {
   /// to the current time. Useful for scenarios where you want to clear rate limits,
   /// such as after a user upgrade or payment.
   Future<void> reset() => _lock.synchronized(() async {
-    await _tokenCount.set(maxTokens.toDouble());
-    await _lastRefill.set(DateTime.now());
-  });
+        await _tokenCount.set(maxTokens.toDouble());
+        await _lastRefill.set(DateTime.now());
+      });
 
   /// Removes all persisted state from storage.
   ///
   /// This completely clears all rate limiter data from persistent storage.
   /// Primarily intended for testing and debugging purposes.
   Future<void> removeAll() => _lock.synchronized(() async {
-    await _tokenCount.remove();
-    await _lastRefill.remove();
-  });
+        await _tokenCount.remove();
+        await _lastRefill.remove();
+      });
 
   /// Checks if any rate limiter state exists in persistent storage.
   ///
