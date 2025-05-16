@@ -1,6 +1,6 @@
 name: limit
 description: "Persistent across sessions, no manual storage needed. Easily manage cooldowns and rate limits with one-line."
-version: 1.0.7
+version: 1.0.8
 homepage: https://github.com/jozzzzep/limit
 repository: https://github.com/jozzzzep/limit
 issue_tracker: https://github.com/jozzzzep/limit/issues
@@ -18,7 +18,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  prf: ^2.3.1
+  prf: ^2.4.2
   synchronized: ^3.3.1
 
 dev_dependencies:
