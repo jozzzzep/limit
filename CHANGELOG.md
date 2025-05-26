@@ -1,4 +1,4 @@
-## NEXT
+## 1.0.9
 
 - Moved internal files to `lib/src/` to improve encapsulation and API clarity
 - Updated README
