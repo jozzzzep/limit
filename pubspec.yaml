@@ -1,6 +1,6 @@
 name: limit
 description: "Persistent across sessions, no manual storage needed. Easily manage cooldowns and rate limits with one-line."
-version: 1.0.8
+version: 1.0.9
 homepage: https://github.com/jozzdart/limit
 repository: https://github.com/jozzdart/limit
 issue_tracker: https://github.com/jozzdart/limit/issues
