@@ -12,13 +12,13 @@ topics:
   - easy-to-use
 
 environment:
-  sdk: ^3.5.0
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=3.24.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  prf: ^2.4.2
+  prf: ^2.4.5
   synchronized: ^3.3.1
 
 dev_dependencies:
