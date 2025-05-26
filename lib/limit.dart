@@ -13,29 +13,4 @@
 /// ```
 library;
 
-/// A utility for managing cooldown logic using persisted DateTime and Activation Count.
-///
-/// Stores:
-/// - the last activation time (`<prefix>_cd_date_time`)
-/// - the total activation count (`<prefix>_cd_count`)
-///
-/// Example:
-/// ```dart
-/// final cooldown = Cooldown('daily_reward', duration: Duration(hours: 24));
-/// if (!await cooldown.isCooldownActive()) {
-///   await cooldown.activateCooldown();
-/// }
-/// ```
-export 'services/cooldown.dart';
-
-/// A robust, industry-grade token bucket rate limiter using `prf`.
-///
-/// Limits actions to a defined number within a given duration,
-/// using a refillable token system with persistent storage.
-///
-/// Example:
-/// ```dart
-/// final limiter = RateLimiter('chat_send', maxTokens: 100, refillDuration: Duration(minutes: 15));
-/// final canSend = await limiter.tryConsume();
-/// ```
-export 'services/rate_limiter.dart';
+export 'src/limit.dart';
