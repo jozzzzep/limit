@@ -2,8 +2,8 @@
 
 <h3 align="center"><i>Persistent limits. Effortlessly automated.</i></h3>
 <p align="center">
-        <img src="https://img.shields.io/codefactor/grade/github/jozzzzep/limit?style=flat-square">
-        <img src="https://img.shields.io/github/license/jozzzzep/limit?style=flat-square">
+        <img src="https://img.shields.io/codefactor/grade/github/jozzdart/limit?style=flat-square">
+        <img src="https://img.shields.io/github/license/jozzdart/limit?style=flat-square">
         <img src="https://img.shields.io/pub/points/limit?style=flat-square">
         <img src="https://img.shields.io/pub/v/limit?style=flat-square">
         
@@ -69,7 +69,7 @@ Each limiter is tailored for a specific pattern of time-based control.
 
 # ⏲ `Cooldown` Persistent Cooldown Service
 
-[⤴️ Back](#table-of-contents) -> Table of Contents
+_[⤴️ Back](#table-of-contents) -> Table of Contents_
 
 `Cooldown` is a plug-and-play utility service for managing **cooldown windows** (e.g. daily rewards, button lockouts, retry delays) that persist across sessions and isolates — no timers, no manual bookkeeping, no re-implementation every time.
 
@@ -391,6 +391,8 @@ final limiter = RateLimiter(
   - Best when used in single-isolate environments (most apps)
 
 > ⚠️ **Warning**: Enabling `useCache` disables isolate safety. Use only when you're sure no other isolate accesses the same key.
+
+_[⤴️ Back](#table-of-contents) -> Table of Contents_
 
 ---
 
