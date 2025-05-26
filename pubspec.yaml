@@ -1,9 +1,9 @@
 name: limit
 description: "Persistent across sessions, no manual storage needed. Easily manage cooldowns and rate limits with one-line."
 version: 1.0.8
-homepage: https://github.com/jozzzzep/limit
-repository: https://github.com/jozzzzep/limit
-issue_tracker: https://github.com/jozzzzep/limit/issues
+homepage: https://github.com/jozzdart/limit
+repository: https://github.com/jozzdart/limit
+issue_tracker: https://github.com/jozzdart/limit/issues
 topics:
   - rate-limiter
   - cooldown
@@ -12,7 +12,7 @@ topics:
   - easy-to-use
 
 environment:
-  sdk: ^3.5.0
+  sdk: ">=3.5.0 <4.0.0"
   flutter: ">=3.24.0"
 
 dependencies:
